@@ -13,8 +13,20 @@ function App() {
   return (
     <div className="App">
       <Navbar titulo="Portal Producciones" />
+      <div className="App-contenedor"></div>
       <Router>
-        <div className="App-contenedor"></div>
+        <nav>
+          <li>
+            <Link to="/" />
+            <Link to="/form" />
+            <Link to="/txt" />
+          </li>
+        </nav>
+        <Switch>
+          <Route exact path="/form" component={Formulario} />
+          <Route exact path="/txt" component={Texto} />
+          <Route exact path="/" component={Cards} />
+        </Switch>
       </Router>
     </div>
   );
