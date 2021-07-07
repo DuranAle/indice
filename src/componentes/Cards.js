@@ -1,6 +1,14 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Card from "./Card";
 import "./Cards.css";
+import Formulario from "./Formulario";
 
 const cards = [
   {
@@ -11,12 +19,12 @@ const cards = [
   {
     id: 2,
     titulo: "SiDesRu",
-    url: "https://translate.google.com.ar/?hl=es-419&tab=TT",
+    url: "/txt",
   },
   {
     id: 3,
     titulo: "Marcas y señales",
-    url: "www.ole.com.ar",
+    url: "/form",
   },
 ];
 
@@ -27,7 +35,7 @@ function Cards() {
         <div className="columns is-multiline is-half" key={cards.id}>
           {cards.map((card) => (
             <div className="column is-one-third">
-              <Card titulo={card.titulo}></Card>
+              <Card titulo={card.titulo} url={card.url}></Card>
             </div>
           ))}
         </div>
